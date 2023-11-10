@@ -1,0 +1,29 @@
+get flask and flask-wtf
+
+in command line run in the app directory:
+set FLASK_APP=app.py
+flask run
+
+use this to login
+num  password
+------------------
+1   password1
+2   securepass
+3   mysecretpwd
+4   pa$$word
+5   12345678
+6   ilovecoding
+7   abc123
+8   qwerty
+9   password123
+10  secret123
+11  password1
+12  securepass
+13  mysecretpwd
+14  pa$$word
+15  12345678
+16  ilovecoding
+17  abc123
+18  qwerty
+19  password123
+20  secret123

@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/general.css')}}"/>
+        {% if title %}
+        <title>{{ title }} - library</title>
+        {% else %}
+        <title>Home</title>
+        {% endif %}
+    </head>
+    <body>
+        <div class="very-top">
+            <img src="{{url_for('static',filename='logo.jpg')}}" alt="HTML5 Icon" width="60" height="60"/>
+            <form action="" method="post" novalidate>
+                {{ searchForm.hidden_tag() }}
+                {{searchForm.search_bar}}
+                {{searchForm.search_button}}
+            </form>
+            {% if name is not none %}
+                <p>Welcome, {{name}}</p><br>
+                <form action="" method="post" novalidate>
+                    {{logoutForm.logout_button}}
+                </form>
+            {% else %}
+                <a href=http://localhost:5000/login>
+                    <button>Login</button>
+                    
+                </a>
+            {% endif %}
+        </div>
+        <hr>
+        <div class="main-menu" style="width: 100%">
+            <a href=http://localhost:5000>
+                <button style="Width:14.2%">Home</button>
+            </a>
+            <a href=http://localhost:5000/myItems>
+                <button style="Width:14.2%">My Items</button>
+            </a>
+            <a href=http://localhost:5000/donate>
+                <button style="Width:14.2%">Donate</button>
+            </a>
+            <a href=http://localhost:5000/events>
+                <button style="Width:14.2%">Events</button>
+            </a>
+            <a href=http://localhost:5000/myEvents>
+                <button style="Width:14.2%">My Events</button>
+            </a>
+            <a href=http://localhost:5000/volunteer>
+                <button style="Width:14.2%">Volunteer</button>
+            </a>
+            <a href=http://localhost:5000/askUs>
+                <button style="Width:14.2%">Ask Us</button>
+            </a>
+        </div>
+
+        <hr>
+
+        {% block content %}{% endblock %}
+    </body>
+</html>

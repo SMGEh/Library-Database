@@ -1,0 +1,21 @@
+{% extends "top.html" %}
+
+{% block content %}
+    <h1>Sign In</h1>
+    <form action="" method="post" novalidate>
+        {{ loginForm.hidden_tag() }}
+        <p>
+        {{loginForm.number.label}}<br>
+        {{loginForm.number}}
+        {% if incorrect %}
+        <span style="color:red;">Invalid username or password</span>
+        {% endif %}
+        </p>
+        <p>
+        {{loginForm.password.label}}<br>
+        {{loginForm.password}}
+        </p>
+        {{loginForm.submit()}}
+
+    </form>
+{% endblock %}

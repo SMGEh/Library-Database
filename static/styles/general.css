@@ -1,0 +1,36 @@
+.very-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.main-menu button{
+    border: 5px black;
+    padding:10px 24px;
+    cursor:pointer;
+    float: left;
+}
+
+.main-menu:after{
+    content: "";
+    clear:both;
+    display: table;
+}
+
+.main-menu button:hover{
+    background-color: darkgray;
+}
+
+.events{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+a{
+    color:gray;
+    font-size:18px;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+    color:rgb(70,70,70);
+}

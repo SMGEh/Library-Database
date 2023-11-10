@@ -1,0 +1,81 @@
+{% extends "top.html" %}
+
+{% block content %}
+
+    {% if search_result['item_type'] == "Book"%}
+    <div>
+        <H2>{{ search_result['Book_title']}}</H2>
+        <p>Author: {{ search_result['Book_author'] }}</p> <br>
+        <p>Year Published: {{ search_result['Book_publication_yr'] }}</p> <br>
+        <p>Description: {{ search_result['Book_description'] }}</p> <br>
+
+    </div>
+    {%endif%}
+    
+    {% if search_result['item_type'] == "Magazine"%}
+    <div>
+        <H2>{{ search_result['Magazine_title']}} </H2>
+        <p>Publisher: {{ search_result['Magazine_publisher']}}</p><br>
+        <p>Issue No: {{ search_result['Magazine_issueNo']}}</p>
+    </div>
+    {%endif%}
+    
+    {% if search_result['item_type'] == "CD"%}
+    <div>
+        <H2>{{ search_result['CD_title']}} </H2>
+        <p>Artist: {{ search_result['CD_artist']}}</p><br>
+        <p>Release Year: {{ search_result['CD_releaseYr']}}</p><br>
+        <p>Publisher: {{ search_result['CD_publisher']}}</p><br>
+        <p>Number of Tracks: {{ search_result['CD_totalTracks']}}</p><br>
+    </div>
+    {%endif%}
+    
+    {% if search_result['item_type'] == "Record"%}
+    <div>
+        <H2>{{ search_result['Record_title']}} </H2>
+        <p>Artist: {{ search_result['Record_artist']}} </p><br>
+        <p>Release Year: {{ search_result['Record_releaseYr']}} </p><br>
+        <p>Publisher: {{ search_result['Record_publisher']}} </p><br>
+        <p>Number of Tracks: {{ search_result['Record_totalTracks']}} </p><br>
+    </div>
+    {%endif%}
+    
+    {% if search_result['item_type'] == "Journal"%}
+    <div>
+        <H2>{{ search_result['Journal_title']}} </H2>
+        <p>Publisher: {{ search_result['Journal_publisher']}}</p><br>
+        <p>Date Published: {{ search_result['Journal_date']}}</p>
+    </div>
+    {%endif%}
+    
+    {% if search_result['item_type'] == "Movie"%}
+    <div>
+        <H2>{{ search_result['Movie_title']}} </H2>
+        <p>Director: {{ search_result['Movie_director']}}</p><br>
+        <p>Release Year: {{ search_result['Movie_releaseYr']}}</p><br>
+        <p>Movie Cast: {{ search_result['Movie_cast']}}</p><br>
+        <p>Movie Time: {{ search_result['Movie_time']}}</p><br>
+        <p>Description: {{ search_result['Movie_description']}}</p><br>
+    </div>
+    {%endif%}
+    
+    <form method="POST">
+        <!--block renewal if item has fines-->
+        {% if checkedOut >0 %}
+        <h4>Renew</h4>
+        <p>Renew Reason: {{checkoutForm.renewReason}}</p><br>
+        {{checkoutForm.renew}}
+        <h4>return</h4>
+        {{checkoutForm.returnItem}}
+
+        {% elif search_result['Available_copies'] > 0%}
+        {{checkoutForm.submit_button}}
+        
+        {% else %}
+        {{checkoutForm.submit_button(disabled=disabled)}}<br>
+        <p>All of these items are checkout out</p>
+        {%endif%}
+    </form>
+
+
+{% endblock %}

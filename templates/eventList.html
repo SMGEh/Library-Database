@@ -1,0 +1,14 @@
+{% extends "top.html" %}
+
+{% block content %}
+    <h1>Events</h1>
+    {% for event in eventsList %}
+        <div class='events'>
+            <div class=events>
+                <a href="{{url_for('eventRegister',eventID=event['EventID'])}}">{{ event['event_name']}}</a>
+                <p>Date: {{ event['event_date']}}</p>
+            </div>
+
+        </div>
+    {% endfor %}
+{% endblock %}

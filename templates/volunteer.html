@@ -1,0 +1,22 @@
+{% extends "top.html" %}
+
+{% block content %}
+    <h1>Volunteer</h1>
+    {% if inTable == 0 %}
+    <form action="" method="post" novalidate>]
+        <div><p>Please describe your availability:</p>{{volunteer.availability}}</div>
+        <div><p>Please describe what you want to volunteer for:</p>{{volunteer.interests}}</div>
+        <div><p>Please describe what your experience in these interests:</p>{{volunteer.experience}}</div>
+        <div>Start date:{{volunteer.startDate}}</div><br>
+        <div>End date:{{volunteer.endDate}}</div><br>
+
+        <div>{{volunteer.submit_button()}}</div>
+        
+    </form>
+    {% else %}
+    <p>Already registrered to volunteer</p>
+    <form method="post">
+        <div>{{volunteer.unregister_button()}}</div>
+    </form>
+    {% endif %}
+{% endblock %}

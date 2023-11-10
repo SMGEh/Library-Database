@@ -1,0 +1,20 @@
+{% extends "top.html" %}
+
+{% block content %}
+    <h1>Events Registered For</h1>
+    <div class=events>
+        <h2>{{ event['Event_name']}}</h2>
+        <p>{{ event['Event_date']}}</p>
+    </div>
+    <p>reccommended for: {{ event['Audience']}}</p><br>
+    <p>Room Number: {{ event['Venue']}}</p><br>
+    <p>{{ event['Event_description']}}</p><br>
+    <p>max attendence: {{ event['Event_capacity']}}</p><br>
+    <form method="POST">
+        {% if registered %}
+        {{submit.unregister_button}}
+        {% else %}
+        {{submit.submit_button}}
+        {% endif %}
+    </form>
+{% endblock %}

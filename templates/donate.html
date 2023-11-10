@@ -1,0 +1,16 @@
+{% extends "top.html" %}
+
+{% block content %}
+    <h1>Donate</h1>
+    <form action="" method="post" novalidate>
+        
+        <p>{{donateForm.dropdown.label}}: {{donateForm.dropdown}}</p>
+        <p>{{donateForm.title.label}}: {{donateForm.title}}</p>
+        <p>{{donateForm.description.label}}: {{donateForm.description}}</p>
+        <p>Donate Date: {{donateForm.donateDate}}</p>
+        <p>{{donateForm.submit_button.label}}: {{donateForm.submit_button}}</p>
+        
+        
+    </form>
+    
+{% endblock %}
