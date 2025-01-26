@@ -5,7 +5,7 @@
     {% for event in eventsList %}
         <div class='events'>
             <div class=events>
-                <a href="{{url_for('eventRegister',eventID=event['EventID'])}}">{{ event['event_name']}}</a>
+                <a href="{{url_for('eventRegister.eventRegister',eventID=event['EventID'])}}">{{ event['event_name']}}</a>
                 <p>Date: {{ event['event_date']}}</p>
             </div>
 

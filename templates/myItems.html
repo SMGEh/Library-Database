@@ -6,7 +6,7 @@
         <div class='search-Result'>
             {% if search_result['item_type'] == "Book"%}
             <div>
-                <a href="{{url_for('itemCheckOut',item=search_result['item_id'])}}">{{ search_result['Book_title']}} </a>
+                <a href="{{url_for('itemCheckOut.itemCheckOut',item=search_result['item_id'])}}">{{ search_result['Book_title']}} </a>
                 {{ search_result['Book_author'] }} <br>
                 <p>{{ search_result['return_date']}}</p>
                 <p>Fines: {{ search_result['fine_amount']}}</p>
@@ -15,7 +15,7 @@
         
             {% if search_result['item_type'] == "Magazine"%}
             <div>
-                <a href="{{url_for('itemCheckOut',item=search_result['item_id'])}}">{{ search_result['Magazine_title']}} </a>
+                <a href="{{url_for('itemCheckOut.itemCheckOut',item=search_result['item_id'])}}">{{ search_result['Magazine_title']}} </a>
                 {{ search_result['Magazine_publisher']}}
                 <p>{{ search_result['return_date']}}</p>
                 <p>Fines: {{ search_result['fine_amount']}}</p>
@@ -24,7 +24,7 @@
         
             {% if search_result['item_type'] == "CD"%}
             <div>
-                <a href="{{url_for('itemCheckOut',item=search_result['item_id'])}}">{{ search_result['CD_title']}} </a>
+                <a href="{{url_for('itemCheckOut.itemCheckOut',item=search_result['item_id'])}}">{{ search_result['CD_title']}} </a>
                 {{ search_result['CD_artist']}}
                 <p>{{ search_result['return_date']}}</p>
                 <p>Fines: {{ search_result['fine_amount']}}</p>
@@ -33,7 +33,7 @@
         
             {% if search_result['item_type'] == "Record"%}
             <div>
-                <a href="{{url_for('itemCheckOut',item=search_result['item_id'])}}">{{ search_result['Record_title']}} </a>
+                <a href="{{url_for('itemCheckOut.itemCheckOut',item=search_result['item_id'])}}">{{ search_result['Record_title']}} </a>
                 {{ search_result['Record_artist']}}
                 <p>{{ search_result['return_date']}}</p>
                 <p>Fines: {{ search_result['fine_amount']}}</p>
@@ -42,7 +42,7 @@
         
             {% if search_result['item_type'] == "Journal"%}
             <div>
-                <a href="{{url_for('itemCheckOut',item=search_result['item_id'])}}">{{ search_result['Journal_title']}} </a>
+                <a href="{{url_for('itemCheckOut.itemCheckOut',item=search_result['item_id'])}}">{{ search_result['Journal_title']}} </a>
                 {{ search_result['Journal_publisher']}}
                 <p>{{ search_result['return_date']}}</p>
                 <p>Fines: {{ search_result['fine_amount']}}</p>
@@ -51,7 +51,7 @@
         
             {% if search_result['item_type'] == "Movie"%}
             <div>
-                <a href="{{url_for('itemCheckOut',item=search_result['item_id'])}}">{{ search_result['Movie_title']}} </a>
+                <a href="{{url_for('itemCheckOut.itemCheckOut',item=search_result['item_id'])}}">{{ search_result['Movie_title']}} </a>
                 {{ search_result['Movie_director']}}
                 <p>{{ search_result['return_date']}}</p>
                 <p>Fines: {{ search_result['fine_amount']}}</p>
